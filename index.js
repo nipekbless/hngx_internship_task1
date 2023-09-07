@@ -10,5 +10,5 @@ app.listen( port , ()=>{
     
 })
 
-app.use("/api", route)
+app.use("/", route)
 

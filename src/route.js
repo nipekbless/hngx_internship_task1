@@ -1,8 +1,8 @@
 const route = require("express").Router()
-const currentDate = new Date();
-const currentUtcTime = currentDate.toLocaleDateString('en-US', {weekday: "long"});
-const githubFileUrl = "";
-const githubRepoUrl = "";
+const currentUtcTime = new Date();
+const currentDay = currentUtcTime.toLocaleDateString('en-US', {weekday: "long"});
+const githubFileUrl = "https://github.com/nipekbless/hngx_internship_task1/blob/main/index.js";
+const githubRepoUrl = "https://github.com/nipekbless/hngx_internship_task1";
 const statusCode = 200
 
 route.get('/check', (req, res)=>{
@@ -10,7 +10,7 @@ route.get('/check', (req, res)=>{
     res.send("Route is working")
 })
 
-route.get("/", (req, res)=>{
+route.get("/api", (req, res)=>{
     const {slack_name, track} = req.query
     res.status(200).json(
         {
