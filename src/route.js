@@ -13,7 +13,7 @@ route.get("/api", (req, res)=>{
 const currentDate = new Date();
 const currentTime = currentDate.toISOString()
 const currentUtcDate = currentTime.slice(0, -5) + "Z"
-const currentDay = "Thursday"//currentDate .toLocaleDateString('en-US', {weekday: "long"});
+const currentDay = currentDate .toLocaleDateString('en-US', {weekday: "long"});
     const {slack_name, track} = req.query
     res.status(200).json(
         {
